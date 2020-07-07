@@ -1,13 +1,7 @@
 Rails.application.routes.draw do
-  get 'comments/create'
-  get 'posts/index'
-  get 'posts/show'
-  get 'posts/create'
-  get 'posts/index'
-  get 'posts/show'
-  get 'posts/new'
-  get 'posts/create'
   devise_for :users
-  root to: 'pages#home'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: 'posts#index'
+  resources :posts, only: [:index, :show, :create] do
+    resources :comments, only: [:create]
+  end
 end
