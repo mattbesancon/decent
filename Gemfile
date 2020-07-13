@@ -33,9 +33,6 @@ gem 'cancancan'
 gem 'draper'
 gem 'pundit'
 
-# Use of Mailgun to handle the post related emails
-gem 'mailgun-ruby', '~>1.1.6'
-
 # Use of sidekiq for reducing time with emails
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
