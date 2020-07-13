@@ -2,20 +2,11 @@ class Post < ApplicationRecord
     belongs_to :user
     has_many :comments, dependent: :destroy
     has_one_attached :photo
-    # include ActiveModel::Validations
-    # validates_with MyValidator
-end
+    after_create :send_verification_email
 
-=begin
-class MyValidator < ActiveModel::Validator
-    def validate(record)
-        if some_complex_logic
-        record.errors.add :base, 'This record is invalid'
-        end
-    end
+  private
 
-private
-    def some_complex_logic
-    end
+  def send_verification_email
+    UserMailer.with(user: current_user).afterpost.deliver_now
+  end
 end
-=end
