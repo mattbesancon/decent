@@ -5,4 +5,8 @@ Rails.application.routes.draw do
   resources :posts, only: [:index, :show, :create, :new] do
     resources :comments, only: [:create]
   end
+  require "sidekiq/web"
+  authenticate :user, lambda { |u| u.admin } do
+    mount Sidekiq::Web => '/sidekiq'
+  end
 end
