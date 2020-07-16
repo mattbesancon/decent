@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-    def afterpost
+    def verification_email
         @user = params[:user]
         mail(to: @user.email, subject: 'Your post now needs to be validated')
     end
