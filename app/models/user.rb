@@ -9,7 +9,6 @@ class User < ApplicationRecord
   private
 
   def send_verification_email
-    # @user = params[:user] if current_user does not work
-    UserMailer.with(user: current_user).verification_email.deliver_now
+    UserMailer.with(user: self).verification_email.deliver_now
   end
 end

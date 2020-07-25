@@ -1,6 +1,6 @@
 class UserMailer < ApplicationMailer
-    def verification_email(user_id)
-        @user = User.find(user_id)
+    def verification_email
+        @user = params[:user]
         mail(to: @user.email, subject: 'Your post now needs to be validated')
     end
 end
