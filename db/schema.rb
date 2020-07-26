@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 2020_07_16_154513) do
     t.string "title"
     t.string "author"
     t.text "content"
-    t.float "rating"
+    t.float "rating", default: 0.0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "photo"
