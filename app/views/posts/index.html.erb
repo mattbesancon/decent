@@ -1,24 +1,23 @@
-<div class="container">
-  <br>
-  <div class="button-container">
+<div class="button-container">
     <%= link_to "Add a post", new_post_path, class: "btn btn-primary btn-lg btn-block" %>
-  </div>
-  <br>
-  <div class="row">
-    <% @posts.each do |post| %>
-      <div class="col-12 col-md-6 col-lg-3">
-        <% if post.photo? %>
-          <% background_url = cl_image_path post.photo.key, width: 400, height: 500, crop: :fill %>
-        <% else %>
-          <% background_url = "https://source.unsplash.com/500x400/?avatar" %>
-        <% end %>
-        <div class="post" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= background_url %>');">
-          <div class="post-description">
-            <h2><%= post.title %></h2>
-          </div>
-          <%= link_to "", post_path(post), class: 'post-link' %>
-        </div>
-      </div>
-    <% end %>
-  </div>
 </div>
+  <br>
+<div class="row">
+  <% @posts.each do |post| %>
+    <div class="col-12 col-md-6 col-lg-3">
+      <% if post.photo? %>
+        <% background_url = cl_image_path post.photo.key, width: 400, height: 500, crop: :fill %>
+      <% else %>
+        <% background_url = "https://source.unsplash.com/500x400/?avatar" %>
+      <% end %>
+      <div class="post" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= background_url %>');">
+        <div class="post-description">
+          <h2><%= post.title %></h2>
+        </div>
+        <%= link_to "", post_path(post), class: 'post-link' %>
+      </div>
+    </div>
+    <br>
+  <% end %>
+</div>
+
