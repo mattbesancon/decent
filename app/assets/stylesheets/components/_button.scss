@@ -1,3 +1,12 @@
-.button-container {
-    
+.sticky {
+    position: sticky;
+    position: -webkit-sticky;    
+    width: 100vw;
+    height: 50px;
+    top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 6px #000;
+    color: #fff;
 }
