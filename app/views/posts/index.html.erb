@@ -5,12 +5,7 @@
 <div class="row">
   <% @posts.each do |post| %>
     <div class="col-12 col-md-6 col-lg-3">
-      <% if post.photo? %>
-        <% background_url = cl_image_path post.photo.key, width: 400, height: 500, crop: :fill %>
-      <% else %>
-        <% background_url = "https://source.unsplash.com/500x400/?avatar" %>
-      <% end %>
-      <div class="post" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= background_url %>');">
+      <div class="post" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/500x400/?avatar');">
         <div class="post-description">
           <h2><%= post.title %></h2>
         </div>

@@ -33,3 +33,35 @@
 .post-link:hover {
     opacity: 0.1;
 }
+.main-container {
+    overflow: hidden;
+    height: 120px;
+    background: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+  }
+  
+.picture {
+    height: 100%;
+    width: 120px;
+    object-fit: cover;
+}
+
+.main-container h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.main-container p {
+    font-size: 12px;
+    line-height: 1.4;
+    opacity: .7;
+    margin-bottom: 0;
+    margin-top: 8px;
+}
+
+.main-container .main-container-infos {
+    padding: 16px;
+}
