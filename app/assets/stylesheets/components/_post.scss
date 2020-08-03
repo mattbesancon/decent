@@ -35,30 +35,23 @@
 }
 .post-show {
     overflow: hidden;
-    height: 120px;
+    height: 200px;
     width: 100vw;
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     display: flex;
     align-items: center;
-}
-  
+} 
 .post-show-picture {
     height: 100%;
     width: 120px;
     object-fit: cover;
-    flex: 1 1 auto;
-}
-.post-show-infos {
-    padding: 16px;
-    margin-left: auto;
 }
 .post-show h2 {
     font-size: 16px;
     font-weight: bold;
     margin: 0;
 }
-
 .post-show p {
     font-size: 12px;
     line-height: 1.4;
@@ -66,4 +59,10 @@
     margin-bottom: 0;
     margin-top: 8px;
     width: 100vw;
+}
+.post-show .post-show-infos {
+    padding: 16px;
+}
+.post-show-infos {
+    margin-left: 300px;
 }
