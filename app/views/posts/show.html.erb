@@ -5,9 +5,9 @@
                 <%= cl_image_tag @post.photo.key, height: 300, width: 400, crop: :fill %>
             </div>
             <div class="post-show-infos">
-                <h2><%= @post.author %></h2>
-                <p><%= @post.content %></p>
-                <p></p><%= @post.rating %></p>
+                <h2>Author:  <%= @post.author %></h2>
+                <p>Content:  <%= @post.content %></p>
+                <p>Rating:  <%= @post.rating %></p>
             </div>
         </div>
     </div>
