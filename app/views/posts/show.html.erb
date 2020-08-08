@@ -17,7 +17,6 @@
                 <% @post.comments.each do |comment| %>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     <%= comment.content %>
-                    <%= comment.author %>
                 </li>
                 <% end %>
             </ul>
