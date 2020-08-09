@@ -10,6 +10,7 @@
                 <p>Rating:  <%= @post.rating %></p>
             </div>
         </div>
+        <br>
         <div class="comments-container">
             <% if @post.comments.empty? %>
             <% else %>
@@ -21,6 +22,7 @@
                 <% end %>
             </ul>
             <% end %>
+            <br>
             <% render "comments/new", post: @post, comment: @comment %>
         </div>
     </div>
