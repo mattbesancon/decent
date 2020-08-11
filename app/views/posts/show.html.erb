@@ -2,7 +2,9 @@
     <div class="col-12 col-md-6 col-lg-3">
         <div class="post-show">
             <div class="post-show-picture">
-                <%= cl_image_tag @post.photo.key, height: 300, width: 400, crop: :fill %>
+                <% if @post.photo.attached? %>
+                    <%= cl_image_tag @post.photo.key, height: 300, width: 400, crop: :fill %>
+                <% end  %>
             </div>
             <div class="post-show-infos">
                 <h2>Author:  <%= @post.author %></h2>
