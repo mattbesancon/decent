@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe PostsController, type: :controller do
 
+    login_user
+
     let(:valid_attributes) {
         { :title => "Test title", :author => "Test author", :content => "Test content" }
     }
