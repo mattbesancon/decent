@@ -104,6 +104,7 @@ GEM
     concurrent-ruby (1.1.6)
     connection_pool (2.2.3)
     crass (1.0.6)
+    database_cleaner (1.8.5)
     devise (4.7.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -125,6 +126,11 @@ GEM
       request_store (>= 1.0)
     erubi (1.9.0)
     execjs (2.7.0)
+    factory_bot (6.1.0)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.1.0)
+      factory_bot (~> 6.1.0)
+      railties (>= 5.0.0)
     ffi (1.13.1)
     ffi (1.13.1-java)
     ffi (1.13.1-x64-mingw32)
@@ -167,8 +173,6 @@ GEM
       activerecord
       kaminari-core (= 1.2.1)
     kaminari-core (1.2.1)
-    launchy (2.5.0)
-      addressable (~> 2.7)
     listen (3.2.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -329,6 +333,8 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    shoulda-matchers (4.3.0)
+      activesupport (>= 4.2.0)
     sidekiq (6.1.0)
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
@@ -407,12 +413,13 @@ DEPENDENCIES
   cancancan
   capybara (>= 2.15)
   cloudinary (~> 1.12.0)
+  database_cleaner
   devise
   dotenv-rails
   draper
+  factory_bot_rails
   font-awesome-sass
   jbuilder (~> 2.7)
-  launchy
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
   pry-byebug
@@ -428,6 +435,7 @@ DEPENDENCIES
   rspec-support
   sass-rails (>= 6)
   selenium-webdriver
+  shoulda-matchers
   sidekiq
   sidekiq-failures (~> 1.0)
   simple_form
