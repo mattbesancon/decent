@@ -37,6 +37,9 @@ gem 'pundit'
 gem 'sidekiq'
 gem 'sidekiq-failures', '~> 1.0'
 
+# Verify the posts by admin using aasm
+# gem 'aasm'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
