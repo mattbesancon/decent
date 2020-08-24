@@ -1,11 +1,13 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show]
+  skip_before_action :authenticate_user!, only: [:index]
+  before_action :set_post, only: [:edit, :update, :destroy]
   
   def index
-    @posts = Post.where(:verified => true)
+    @posts = policy_scope(Post).order(created_at: :desc)
   end
 
   def show
+    @post = policy_scope(Post).find(params[:id])
     @comment = Comment.new
   end
 
@@ -20,6 +22,25 @@ class PostsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def edit
+  end
+
+  def update
+    authorize @post
+    @post.update(post_params)
+    if @post.save
+      redirect_to post_path(@post)
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    authorize @post
+    @post.destroy
+    redirect_to posts_path
   end
 
   private
