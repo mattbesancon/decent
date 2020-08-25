@@ -1,10 +1,10 @@
 class PostPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
-      if user.try(:admin?)
+      if user.admin?
         scope.all
       else
-        scope.where(published: true)
+        scope.where(verified: true)
       end
     end
   end

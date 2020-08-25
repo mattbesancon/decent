@@ -3,7 +3,7 @@
 </div>
   <br>
 <div class="row">
-  <% policy_scope(@user.posts).each do |post| %>
+  <% @posts.each do |post| %>
     <div class="col-12 col-md-6 col-lg-3">
       <div class="post" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/500x400/?avatar');">
         <div class="post-description">
