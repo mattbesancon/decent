@@ -34,6 +34,10 @@ class ApplicationPolicy
     true
   end
 
+  def flop?
+    true
+  end
+
   class Scope
     attr_reader :user, :scope
 

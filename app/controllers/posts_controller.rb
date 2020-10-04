@@ -25,6 +25,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    authorize @post
   end
 
   def update
@@ -40,6 +41,15 @@ class PostsController < ApplicationController
   def destroy
     authorize @post
     @post.destroy
+    redirect_to posts_path
+  end
+
+  def flop
+    #authorize @post
+    @post = Post.find(params[:id])
+    @post.verified = !@post.verified
+    @post.save
+
     redirect_to posts_path
   end
 
