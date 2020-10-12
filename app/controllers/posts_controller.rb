@@ -47,7 +47,7 @@ class PostsController < ApplicationController
   def flop
     #authorize @post
     @post = Post.find(params[:id])
-    @post.verified = !@post.verified
+    @post.verified = true
     @post.save
 
     redirect_to posts_path
