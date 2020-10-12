@@ -45,7 +45,6 @@ class PostsController < ApplicationController
   end
 
   def flop
-    #authorize @post
     @post = Post.find(params[:id])
     @post.verified = true
     @post.save
