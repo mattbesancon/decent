@@ -12,9 +12,9 @@ class User < ApplicationRecord
     UserMailer.with(user: self).verification_email.deliver_now
   end
 
-  def current_user
-    @current_user ||= ((User.find(session[:user_id]) if session[:user_id]) || User.new)
-  end
+  #def current_user
+  #  @current_user ||= ((User.find(session[:user_id]) if session[:user_id]) || User.new)
+  #end
   
   def is_admin?
     current_user && current_user.admin?
