@@ -10,10 +10,10 @@ class PostPolicy < ApplicationPolicy
   end
 
   def update?
-    is_admin?
+    user.admin?
   end
 
   def destroy?
-    is_admin?
+    user.admin?
   end
 end
