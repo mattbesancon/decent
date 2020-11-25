@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   # before_action :authenticate_user!, except: [:home]
-  before_action :set_post, only: [:edit, :update, :destroy]
+  before_action :set_post, only: [:update, :destroy]
   
   def index
     @posts = policy_scope(Post).order(created_at: :desc)
@@ -22,10 +22,6 @@ class PostsController < ApplicationController
     else
       render 'new'
     end
-  end
-
-  def edit
-    authorize @post
   end
 
   def update
