@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   # before_action :authenticate_user!, except: [:home]
-  before_action :set_post, only: [:update, :destroy]
+  before_action :set_post, only: [:update, :destroy, :flop]
   
   def index
     @posts = policy_scope(Post).order(created_at: :desc)
@@ -41,7 +41,6 @@ class PostsController < ApplicationController
   end
 
   def flop
-    @post = Post.find(params[:id])
     @post.verified = true
     @post.save
 
