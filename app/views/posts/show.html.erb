@@ -14,7 +14,7 @@
                 <%# if policy(Post).destroy? %>
                     <%#= link_to 'Destroy', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
                 <%# end %>
-                <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %>
+                <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
             </div>
         </div>
         <br>
@@ -25,6 +25,10 @@
                 <% @post.comments.each do |comment| %>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     <%= comment.content %>
+                    <%= link_to 'Delete', post_comment_path(@post), method: :delete, data: { confirm: 'Are you sure?' }%>
+                    <%#= link_to "Delete", post_comment_path(@post, id: comment.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+                    <%#= link_to 'Delete', [comment.post, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+                    <%#= link_to “Destroy”, {:controller => “comment”, :action => “destroy”, :id => comment.id } %>
                 </li>
                 <% end %>
             </ul>

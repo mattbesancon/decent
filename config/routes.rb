@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     member do
       get :flop
     end
-    resources :comments, only: [:create]
+    resources :comments, only: [:create, :destroy]
   end
 end
